@@ -1,0 +1,4 @@
+﻿  self testing.cpp
+C:\Users\micha\OneDrive\Desktop\self testing\self testing.cpp(28,24): error C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\micha\OneDrive\Desktop\self testing\self testing.cpp(185,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\micha\OneDrive\Desktop\self testing\self testing.cpp(208,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data

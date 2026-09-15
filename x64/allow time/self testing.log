@@ -1,0 +1,3 @@
+﻿  self testing.cpp
+C:\Users\micha\OneDrive\Desktop\self testing\self testing.cpp(73,1): warning C4715: 'findRowsDue': not all control paths return a value
+  self testing.vcxproj -> C:\Users\micha\OneDrive\Desktop\self testing\x64\allow time\self testing.exe
