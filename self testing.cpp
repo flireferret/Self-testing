@@ -29,14 +29,14 @@ string getTimeTxt()
 	time_t timeStamp = time(NULL);
 	struct tm dateTime = *localtime(&timeStamp);
 	char output[50];
-	strftime(output, 50, "%d/%m/%y", &dateTime);
+	strftime(output, 50, "%y/%m/%d", &dateTime);
 	return(output);
 }
 
-vector<vector<string>> getThesaurusLines()
+vector<vector<string>> getLines(string File)
 {
 	//get file
-	ifstream file("thesaurus.csv");
+	ifstream file(File);
 	
 
 	vector<vector<string>> output;
@@ -64,43 +64,64 @@ vector<vector<string>> getThesaurusLines()
 
 
 
-//vector<vector<string>> findRowsDue()
-//{
-//	//get time
-//	string time = getTimeTxt();
-//}
-
-void update()
+vector<vector<string>> findRowsDue()
 {
+	//get time
+	string time = getTimeTxt();
+	vector<vector<string>> rowsdue;
+
+	vector<vector<string>> totalrows = getLines("self tests.CSV");
+
+	for (vector<string> testRow:totalrows)
+	{
+		if (testRow[0] <= time)
+		{
+			rowsdue.push_back(testRow);
+			cout << "Due row:" << testRow[0] << "\n";
+		}
+	}
+	return(rowsdue);
+}
+
+void update(vector<vector<string>> newDate)
+{
+	//have an update list of all lines that need new dates,
+	//get a list of all lines that will make the new file
+	//loop through each and replace where question and answer (1 and 2) line up
 
 }
 
-//void test()
-//{
-//	std::cout << "beginning test...\n";
-//	//loop through questions and make temporary list of overdue questions
-//	vector<vector<string>> dueRows= findRowsDue();
-//	//loop through due questions and display only the question, then keep answers in a seperate array
-//	vector<string> answers;
-//	string answer;
-//	for (size_t i = 0; i < (sizeof(dueRows)/sizeof(dueRows[0])); i++)
-//	{
-//		std::cout << dueRows[3][i]<<"\n";
-//		std::cin >> answer;
-//		answers[i] = answer;
-//	}
-//	//loop through new list
-//	bool correct;
-//	for (size_t i = 0; i < (sizeof(dueRows) / sizeof(dueRows[0])); i++)
-//	{
-//		string answer;
-//		std::cout << dueRows[3][i] << "\n";
-//		std::cout << answers[i];
-//		//ask user if they match and update CSV accordingly
-//		std::cin >> correct;
-//
-//	}
-//}
+void test()
+{
+	std::cout << "beginning test...\n";
+	//loop through questions and make temporary list of overdue questions
+	vector<vector<string>> dueRows= findRowsDue();
+	//loop through due questions and display only the question, then keep answers in a seperate array
+	vector<string> answers;
+	string answer;
+	for (vector<string> dueRow:dueRows)
+	{
+		std::cout << dueRow[1]<<"\n";
+		getline(std::cin, answer);
+		answers.push_back(answer);
+	}
+	//loop through new list
+	string correct;
+	int score = 0;
+	for (size_t i = 0; i < dueRows.size(); i++)
+	{
+		
+		std::cout << "\nThe question was: (" << dueRows[i][1] <<") \nthe given answer is: (" << answers[i]<<") \nand correct answer is: (" << dueRows[i][2] <<") \nIs this correct? (1 yes 2 no)\n";
+		//ask user if they match and update CSV accordingly
+		getline(std::cin, correct);
+		if (correct == "1")
+		{
+
+			score++;
+		}
+	}
+	cout << "Score is: " << to_string(score) << "/" << to_string(dueRows.size()) << "\n";
+}
 
 void notes()
 {
@@ -140,7 +161,7 @@ void notes()
 	vector<vector<string>> notes;
 
 	//get thesaurus lines
-	vector<vector<string>> thesaurusLines = getThesaurusLines();
+	vector<vector<string>> thesaurusLines = getLines("thesaurus.CSV");
 
 	//loop through thesaurus lines to extract the code word and pair it with all of it's definitions
 	vector<string> thesaurusCodes;
@@ -194,13 +215,14 @@ void notes()
 				thesCodesRel.push_back(thesaurusCodes[codenum]);
 				thesDefsRel.push_back(thesaurusDefs[codenum]);
 				std::cout << "Thesnum: " << to_string(defnum) << "\n";
-				thesItems.push_back(defnum);
+				thesItems.push_back(defnum-1);//minus one because it counts the 0
 				thesItemCounter.push_back(0);
 			}
 			codenum++;
 		}
 		//if this overflow slot with a 0 in itemcounter is triggered, the code is done
 		thesItemCounter.push_back(0);
+		thesItems.push_back(1); //needed to allow for: while (thesItemCounter[decSpace] > thesItems[decSpace])
 
 		//loop thesItemCounter and for every iteration it creates a unique test file item
 		
@@ -241,28 +263,38 @@ void notes()
 					//the current thesItemCounter number
 					for (size_t i = 0; i < thesCodesRel.size(); i++)
 					{
-						int result = finalString.find((thesCodesRel[i]));
-						if (result != string::npos)
+						bool found = false;
+						while (found == false)
 						{
-							cout << "result\n";
-							//replace current code with current definition for current thesaurusDef for current thesaurusCode for current thesitem
+							int result = finalString.find((thesCodesRel[i]));
+							if (result != string::npos)
+							{
+								cout << "result\n";
+								//replace current code with current definition for current thesaurusDef for current thesaurusCode for current thesitem
 
-							//set string values
-							string 
-								needle(thesCodesRel[i]),
-								//get definition using thessaurus items counter
-								newval(thesDefsRel[i][thesItemCounter[i]]);
+								//set string values
+								string
+									needle(thesCodesRel[i]),
+									//get definition using thessaurus items counter
+									newval(thesDefsRel[i][thesItemCounter[i]]);
 
-							//set index to the place the item is
-							
-								
+								//set index to the place the item is
+
+
 								cout << "index: " << result << " needle length: " << needle.length() << "\n";
 								finalString.replace(result, needle.length(), newval);
-								cout <<"Finalstring: " << finalString << " :finalstring \n";
-								
+								cout << "Finalstring: " << finalString << " :finalstring \n";
+
+							}
+							if (result == string::npos)
+							{
+								found = true;
+							}
+							//i made multiple of the same code turn into copies of the same definition, this is the best option for
+							//simplicity and to not give the tester clues from cross referencing
 						}
 					}
-
+					cout << "added to file" << "\n";
 					file<<(getTimeTxt() + "," + finalString + "\n");
 					
 					//add 1 to the first decimal space in thesitemcounter
@@ -271,6 +303,7 @@ void notes()
 					int decSpace = 0;
 					while (thesItemCounter[decSpace] > thesItems[decSpace])
 					{
+						cout << "decimal space overflow" << "\n";
 						thesItemCounter[decSpace] = 0;
 						decSpace++;
 						thesItemCounter[decSpace]++;
@@ -294,16 +327,17 @@ int main()
 
 	while (sky == "blue")
 	{
-		int bin;
+		string bin;
 		//Begin testing,or take notes
 		std::cout << "Press 1 to answer pending questions, 2 to take notes, or else to quit: \n";
-		std::cin >> bin;
+		getline(std::cin, bin);
 
-		if (bin == 1)
+
+		if (bin == "1")
 		{
-			//test();
+			test();
 		}
-		else if (bin == 2)
+		else if (bin == "2")
 		{
 			notes();
 		}

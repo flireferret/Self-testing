@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|C:\\Users\\micha\\Self-testing\\self testing.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|solutionrelative:self testing.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|C:\\Users\\micha\\Self-testing\\self tests.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|solutionrelative:self tests.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|C:\\Users\\micha\\Self-testing\\thesaurus.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|solutionrelative:thesaurus.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +32,35 @@
               "RelativeDocumentMoniker": "self testing.cpp",
               "ToolTip": "C:\\Users\\micha\\Self-testing\\self testing.cpp",
               "RelativeToolTip": "self testing.cpp",
-              "ViewState": "AgIAABwBAAAAAAAAAAAmwC8BAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAmwFcAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-17T11:12:50.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "self tests.csv",
+              "DocumentMoniker": "C:\\Users\\micha\\Self-testing\\self tests.csv",
+              "RelativeDocumentMoniker": "self tests.csv",
+              "ToolTip": "C:\\Users\\micha\\Self-testing\\self tests.csv",
+              "RelativeToolTip": "self tests.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2026-09-18T09:01:30.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "thesaurus.csv",
+              "DocumentMoniker": "C:\\Users\\micha\\Self-testing\\thesaurus.csv",
+              "RelativeDocumentMoniker": "thesaurus.csv",
+              "ToolTip": "C:\\Users\\micha\\Self-testing\\thesaurus.csv",
+              "RelativeToolTip": "thesaurus.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2026-09-18T09:01:28.509Z",
               "EditorCaption": ""
             }
           ]

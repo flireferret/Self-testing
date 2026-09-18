@@ -1,6 +1,6 @@
 ﻿  self testing.cpp
 C:\Users\micha\Self-testing\self testing.cpp(28,12): warning C4101: 'newtime': unreferenced local variable
-C:\Users\micha\Self-testing\self testing.cpp(188,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\micha\Self-testing\self testing.cpp(193,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\micha\Self-testing\self testing.cpp(244,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\micha\Self-testing\self testing.cpp(205,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\micha\Self-testing\self testing.cpp(210,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\micha\Self-testing\self testing.cpp(265,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   self testing.vcxproj -> C:\Users\micha\Self-testing\x64\Debug\self testing.exe
