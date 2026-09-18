@@ -64,45 +64,43 @@ vector<vector<string>> getThesaurusLines()
 
 
 
-vector<vector<string>> findRowsDue()
-{
-	//get time
-	string time = getTimeTxt();
-
-
-}
+//vector<vector<string>> findRowsDue()
+//{
+//	//get time
+//	string time = getTimeTxt();
+//}
 
 void update()
 {
 
 }
 
-void test()
-{
-	std::cout << "beginning test...\n";
-	//loop through questions and make temporary list of overdue questions
-	vector<vector<string>> dueRows= findRowsDue();
-	//loop through due questions and display only the question, then keep answers in a seperate array
-	vector<string> answers;
-	string answer;
-	for (size_t i = 0; i < (sizeof(dueRows)/sizeof(dueRows[0])); i++)
-	{
-		std::cout << dueRows[3][i]<<"\n";
-		std::cin >> answer;
-		answers[i] = answer;
-	}
-	//loop through new list
-	bool correct;
-	for (size_t i = 0; i < (sizeof(dueRows) / sizeof(dueRows[0])); i++)
-	{
-		string answer;
-		std::cout << dueRows[3][i] << "\n";
-		std::cout << answers[i];
-		//ask user if they match and update CSV accordingly
-		std::cin >> correct;
-
-	}
-}
+//void test()
+//{
+//	std::cout << "beginning test...\n";
+//	//loop through questions and make temporary list of overdue questions
+//	vector<vector<string>> dueRows= findRowsDue();
+//	//loop through due questions and display only the question, then keep answers in a seperate array
+//	vector<string> answers;
+//	string answer;
+//	for (size_t i = 0; i < (sizeof(dueRows)/sizeof(dueRows[0])); i++)
+//	{
+//		std::cout << dueRows[3][i]<<"\n";
+//		std::cin >> answer;
+//		answers[i] = answer;
+//	}
+//	//loop through new list
+//	bool correct;
+//	for (size_t i = 0; i < (sizeof(dueRows) / sizeof(dueRows[0])); i++)
+//	{
+//		string answer;
+//		std::cout << dueRows[3][i] << "\n";
+//		std::cout << answers[i];
+//		//ask user if they match and update CSV accordingly
+//		std::cin >> correct;
+//
+//	}
+//}
 
 void notes()
 {
@@ -303,7 +301,7 @@ int main()
 
 		if (bin == 1)
 		{
-			test();
+			//test();
 		}
 		else if (bin == 2)
 		{

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\micha\\Self-testing\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|C:\\Users\\micha\\Self-testing\\self testing.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{476888B1-F988-47AE-A14B-43A28DF3854C}|self testing.vcxproj|solutionrelative:self testing.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "self testing.cpp",
+              "DocumentMoniker": "C:\\Users\\micha\\Self-testing\\self testing.cpp",
+              "RelativeDocumentMoniker": "self testing.cpp",
+              "ToolTip": "C:\\Users\\micha\\Self-testing\\self testing.cpp",
+              "RelativeToolTip": "self testing.cpp",
+              "ViewState": "AgIAABwBAAAAAAAAAAAmwC8BAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-17T11:12:50.847Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
